@@ -46,6 +46,7 @@ apt-get -qqy dist-upgrade >> installation.log 2>> installation.log
 echo "Configuring WebInterface.."
 apt-get -qqy install curl lighttpd php5-cgi php5-cli screen bzip2 sudo >> installation.log 2>> installation.log
 cp -R /var/log/lighttpd /var/log/nas
+chown www-data.www-data /var/log/nas -R
 mkdir -p /etc/nas/ssl
 pwd="$(pwd)"
 cd /etc/nas/ssl
